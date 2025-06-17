@@ -13,7 +13,7 @@ Out implementation makes use of the Boost library. You can follow the instructio
 ./b2 isntall
 ```
 
-Note the location the library has been installed to. Then change the following line in [CMakeLists.txt](https://github.com/CQCL-DEV/CTDA-Algs/blob/main/CBNE-Serial-C%2B%2B/CMakeLists.txt) so that the path points to the location you have installed the Boost libraries to.
+Note the location the library has been installed to. Then change the following line in CMakeLists.txt so that the path points to the location you have installed the Boost libraries to.
 
 ```
 set(BOOST_ROOT "/home/USER/boost_libraries/")
@@ -80,8 +80,6 @@ Where:
      Displays usage information and exits.
 ```
 
-Please note that the implementation is under active development, so we should be seeing an increase in performance and further options.
-
 ## Running Unit Tests
 
 If you want to build and run the unit tests, you will first need to install Catch2 v3 test framework. To do so, you can use the following commands.
@@ -93,7 +91,7 @@ $ cmake -Bbuild -H. -DBUILD_TESTING=OFF
 $ sudo cmake --build build/ --target install
 ```
 
-Then, in [CMakeLists.txt](https://github.com/CQCL-DEV/QTDA-Algs/blob/ahmed-apres/ctda/Apres-C%2B%2B/CMakeLists.txt) change `if(FALSE)` to `if(TRUE)` and the build as normal. The tests can be run using `ctest` or by running them wuth Catch2.
+Then, in CMakeLists.txt change `if(FALSE)` to `if(TRUE)` and the build as normal. The tests can be run using `ctest` or by running them wuth Catch2.
 
 # Docker
 
