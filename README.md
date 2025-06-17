@@ -39,13 +39,19 @@ To run the code:
 USAGE: 
 
    cbne  [-chsu] [--version] [-a <string>] [-d <int>] [-e <double>] [-i
-         <int>] [-p <string>]
+         <int>] [-n <int>] [-o <string>] [-p <string>]
 
 
 Where: 
 
    -p <string>,  --path <string>
      Path to .graphml input file
+
+   -o <string>,  --out <string>
+     Path to output .csv file
+
+   -n <int>,  --num_data_points <int>
+     Number of data points to output to .csv file
 
    -e <double>,  --epsilon <double>
      Epsilon value
@@ -100,11 +106,11 @@ You can also build and run using the supplied dockerfile. In this case, you can 
 In the root of this repo, run
 
 ```
-sudo docker build -t <your_image_name:tag> -f Dockerfile .
+docker build -t <your_image_name:tag> -f Dockerfile .
 ```
 
 This builds the image from the dockerfile. To actually run the application use:
 
 ```
-sudo docker run -v <path to .graphml files on your machine>:/benchmarks --rm <your_image_name:tag> -p /benchmarks/<path to benchmark> <other options>
+docker run -v <path to .graphml files on your machine>:/benchmarks --rm <your_image_name:tag> -p /benchmarks/<path to benchmark> <other options>
 ```

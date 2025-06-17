@@ -29,7 +29,7 @@ int main(int argc, char** argv){
         TCLAP::SwitchArg             output_shot_count("s","output_shot_count","Output the shot count and exit", false);
         TCLAP::SwitchArg             output_step_count("c","output_step_count","Output the step count and exit", false);
         TCLAP::SwitchArg             use_one_norm("u","use_one_norm","Use the one norm of H if it is present in the input file", true);
-        TCLAP::ValueArg<std::string> apers_version("a","cbne_version","There are various different versions of CBNE algorithm. Use this option to select amongst them. Valid values are in [cbne, cbneCheby, cbneMusco]",false,"cbne","string");
+        TCLAP::ValueArg<std::string> cbne_version("a","cbne_version","There are various different versions of CBNE algorithm. Use this option to select amongst them. Valid values are in [cbne, cbneCheby, cbneMusco]",false,"cbne","string");
 
 
         cmd.add( path_to_graph );
@@ -46,7 +46,7 @@ int main(int argc, char** argv){
         cmd.add( output_shot_count );
         cmd.add( output_step_count );
         cmd.add( use_one_norm );
-        cmd.add( apers_version );
+        cmd.add( cbne_version );
 
         cmd.parse( argc, argv );
 

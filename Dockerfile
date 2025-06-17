@@ -13,8 +13,8 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
 
 # Let us add some heavy dependency
 RUN cd ${HOME} && \
-    wget --no-check-certificate --quiet \
-        https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz && \
+    wget --no-check-certificate  \
+        https://sourceforge.net/projects/boost/files/boost/1.77.0/boost_1_77_0.tar.gz && \
         tar xzf ./boost_1_77_0.tar.gz && \
         cd ./boost_1_77_0 && \
         ./bootstrap.sh && \

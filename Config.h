@@ -6,7 +6,7 @@
 #include <stdexcept>
 
 // set to 1 to output intermediate values to file
-#define OUTPUT_INTERMEDIATE 0
+#define OUTPUT_INTERMEDIATE 1
 #define USE_TIME_LIMIT 0
 
 class Config {
