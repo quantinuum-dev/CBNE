@@ -17,12 +17,12 @@ public:
         for(auto it = args.begin(); it != args.end(); it++)
         {
             std::string name = (*it)->getName();
-            if(name == "apers_version"){
+            if(name == "cbne_version"){
                 auto casted_arg = static_cast<TCLAP::ValueArg<std::string>*>(*it);
-                apers_version = casted_arg->getValue();
+                cbne_version = casted_arg->getValue();
 
-                if(apers_version != "apers1" && apers_version != "apersCheby" && apers_version != "apersIBM" && apers_version != "apersCompressed"){
-                    throw std::invalid_argument("Value " + apers_version + " is not valid for option -av. Please set a valid algorithm version.");
+                if(cbne_version != "cbne" && cbne_version != "cbneCheby" && cbne_version != "cbneMusco" && cbne_version != "cbneCompressed"){
+                    throw std::invalid_argument("Value " + cbne_version + " is not valid for option -a. Please set a valid algorithm version.");
                 }
 
             } else if (name == "output_shot_count") {
@@ -129,8 +129,8 @@ public:
         return time_limit;
     }
 
-    std::string get_apers_version() const {
-        return apers_version;
+    std::string get_cbne_version() const {
+        return cbne_version;
     }
 
 private:
@@ -144,5 +144,5 @@ private:
     bool one_norm;
     double epsilon;
     int time_limit;  
-    std::string apers_version;
+    std::string cbne_version;
 };

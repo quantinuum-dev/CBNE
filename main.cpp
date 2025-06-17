@@ -29,7 +29,7 @@ int main(int argc, char** argv){
         TCLAP::SwitchArg             output_shot_count("s","output_shot_count","Output the shot count and exit", false);
         TCLAP::SwitchArg             output_step_count("c","output_step_count","Output the step count and exit", false);
         TCLAP::SwitchArg             use_one_norm("u","use_one_norm","Use the one norm of H if it is present in the input file", true);
-        TCLAP::ValueArg<std::string> apers_version("a","apers_version","There are various different versions of Apers algorithm. Use this option to select amongst them. Valid values are in [apers1, apersCheby, apersIBM]",false,"apers1","string");
+        TCLAP::ValueArg<std::string> apers_version("a","cbne_version","There are various different versions of CBNE algorithm. Use this option to select amongst them. Valid values are in [cbne, cbneCheby, cbneMusco]",false,"cbne","string");
 
 
         cmd.add( path_to_graph );
@@ -92,11 +92,11 @@ int main(int argc, char** argv){
 
         //double estimate = apre(n, dimension, complex, spectral_gap, eps, t_limit, outp, i_limit);
         std::optional<double> estimate;
-        if(config.get_apers_version() == "apers1"){
+        if(config.get_cbne_version() == "cbne"){
            estimate = cbne(n, dimension, complex, spectral_gap, one_norm, config, stats);
-        } else if(config.get_apers_version()  == "apersCheby"){
+        } else if(config.get_cbne_version()  == "cbneCheby"){
            estimate = cbne_chebychev(n, dimension, complex, spectral_gap, PolyType::APERS, one_norm, config, stats);
-        } else if(config.get_apers_version()  == "apersIBM"){
+        } else if(config.get_cbne_version()  == "cbneMusco"){
            estimate = cbne_chebychev(n, dimension, complex, spectral_gap, PolyType::MUSCO, one_norm, config, stats);
         } else {
            estimate = cbne_chebychev(n, dimension, complex, spectral_gap, PolyType::MUSCO_COMPRESSED, one_norm, config, stats);

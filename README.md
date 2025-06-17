@@ -3,9 +3,7 @@
 
 ### Boost libary
 
-Unfortunately, the C++ implementation makes use of the Boost library which is a bit of a beast. Building is thus not as straightforward as could be hoped for.
-
-You can follow the instructions in the [Boost documentation](https://www.boost.org/doc/libs/1_68_0/more/getting_started/unix-variants.html) to build and install Boost libraries. We repeat them here for clarity. After having downloaded and unzipped the library navigate, in a terminal window, into the newly unzipped folder. Then run
+Out implementation makes use of the Boost library. You can follow the instructions in the [Boost documentation](https://www.boost.org/doc/libs/1_68_0/more/getting_started/unix-variants.html) to build and install Boost libraries. We repeat them here for clarity. After having downloaded and unzipped the library navigate, in a terminal window, into the newly unzipped folder. Then run
 
 ```
 ./bootstrap.sh
@@ -40,7 +38,8 @@ To run the code:
 ```
 USAGE: 
 
-   apres  [-h] [--version] [-e <double>] [-p <string>]
+   cbne  [-chsu] [--version] [-a <string>] [-d <int>] [-e <double>] [-i
+         <int>] [-p <string>]
 
 
 Where: 
@@ -49,7 +48,27 @@ Where:
      Path to .graphml input file
 
    -e <double>,  --epsilon <double>
-     Epsilpn value
+     Epsilon value
+
+   -i <int>,  --iter_limit <int>
+     Number of samples to use
+
+   -d <int>,  --deg_limit <int>
+     Degree to use
+
+   -s,  --output_shot_count
+     Output the shot count and exit
+
+   -c,  --output_step_count
+     Output the step count and exit
+
+   -u,  --use_one_norm
+     Use the one norm of H if it is present in the input file
+
+   -a <string>,  --cbne_version <string>
+     There are various different versions of CBNE algorithm. Use this
+     option to select amongst them. Valid values are in [cbne, cbneCheby,
+     cbneMusco]
 
    --,  --ignore_rest
      Ignores the rest of the labeled arguments following this flag.
