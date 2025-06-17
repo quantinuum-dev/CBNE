@@ -1,4 +1,4 @@
-# CBNE C++ Implementation
+# CBNE
 ## Building
 
 ### Boost libary
@@ -21,7 +21,7 @@ set(BOOST_ROOT "/home/USER/boost_libraries/")
 
 ### CBNE
 
-Now you can run `cmake` and build as per any CMake project. This can be done either from the command line or using the CMake extension in Visual Code. If building from the command line, navigate to `CTDA-Algs/Apres-C++/` then do 
+Now you can run `cmake` and build as per any CMake project. This can be done either from the command line or using the CMake extension in Visual Code. If building from the command line, navigate to `CBNE` (root of this repo) then do 
 
 ```
 mkdir build
